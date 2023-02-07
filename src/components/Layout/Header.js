@@ -1,0 +1,25 @@
+import React, { Component, Fragment } from "react";
+import { Typography, AppBar, Toolbar, IconButton, Badge } from "@mui/material";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+
+const Header = () => {
+  return (
+    <Fragment>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+            MariMart
+          </Typography>
+
+          <IconButton>
+            <Badge badgeContent={5} color="error">
+              <ShoppingCartOutlinedIcon>Cart</ShoppingCartOutlinedIcon>
+            </Badge>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+    </Fragment>
+  );
+};
+
+export default Header;
