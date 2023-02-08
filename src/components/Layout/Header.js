@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Typography, AppBar, Toolbar, IconButton, Badge } from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Fragment>
       <AppBar position="static">
@@ -11,7 +11,7 @@ const Header = () => {
             MariMart
           </Typography>
 
-          <IconButton>
+          <IconButton onClick={props.onShowCart}>
             <Badge badgeContent={5} color="error">
               <ShoppingCartOutlinedIcon>Cart</ShoppingCartOutlinedIcon>
             </Badge>

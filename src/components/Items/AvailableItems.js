@@ -1,10 +1,9 @@
-import { Card, CardContent } from "@mui/material";
+import { Card, CardContent, Container, Grid, Stack } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import Items from "./Items";
 import ItemsList from "./ItemsList";
 
-const DUMMY_ITEMS = [
+export const DUMMY_ITEMS = [
   {
     id: 1,
     image: "../../assets/shirt.png",
@@ -13,16 +12,19 @@ const DUMMY_ITEMS = [
   },
   {
     id: 2,
+    image: "../../assets/jeans.png",
     name: "Shirt",
     price: 299,
   },
   {
     id: 3,
+    image: "../../assets/jeans.png",
     name: "Jeans",
     price: 399,
   },
   {
     id: 4,
+    image: "../../assets/shirt.png",
     name: "Shoes",
     price: 299,
   },
@@ -32,18 +34,23 @@ const AvailableItems = () => {
   const itemList = DUMMY_ITEMS.map((item) => (
     <ItemsList
       key={item.id}
-      name={item.name}
       image={item.image}
+      name={item.name}
       price={item.price}
     />
   ));
 
   return (
-    <Box width="600px">
-      <Card sx={{ maxWidth: 300 }}>
-        <CardContent>{itemList}</CardContent>
-      </Card>
-    </Box>
+    <Container sx={{ py: 8 }} maxWidth="md">
+      <Stack
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        spacing={2}
+      >
+        {itemList}
+      </Stack>
+    </Container>
   );
 };
 
