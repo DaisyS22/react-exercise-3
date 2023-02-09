@@ -1,9 +1,9 @@
-import { React, useRef, useState } from "react";
-import { Typography } from "@mui/material";
+import { React, useRef } from "react";
+import { Button } from "@mui/material";
 import InputField from "../UI/InputField";
+import { Stack } from "@mui/system";
 
 const ItemForm = (props) => {
-  const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef();
 
   const submitHandler = (event) => {
@@ -12,20 +12,11 @@ const ItemForm = (props) => {
     const enteredAmount = amountInputRef.current.value;
     const enteredAmountNumber = +enteredAmount;
 
-    if (
-      enteredAmount.trim().length === 0 ||
-      enteredAmountNumber < 1 ||
-      enteredAmountNumber > 5
-    ) {
-      setAmountIsValid(false);
-      return;
-    }
-
     props.onAddToCart(enteredAmountNumber);
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={submitHandler}>
         <InputField
           ref={amountInputRef}
@@ -34,21 +25,17 @@ const ItemForm = (props) => {
             id: "amount" + props.id,
             type: "number",
             min: "1",
-            max: "5",
+            max: "100",
             step: "1",
             defaultValue: "1",
           }}
         />
         <br />
-        <button variant="contained" size="small" sx={{ margin: "10px" }}>
-          +
-        </button>
-        {!amountIsValid && <Typography>amount not valid</Typography>}
-        <button variant="contained" size="small" color="error">
-          -
-        </button>
+        <Stack spacing={2} direction="row">
+          <Button type="submit">add</Button>
+        </Stack>
       </form>
-    </div>
+    </>
   );
 };
 

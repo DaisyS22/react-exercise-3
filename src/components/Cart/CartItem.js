@@ -3,29 +3,42 @@ import {
   Card,
   CardContent,
   CardMedia,
-  IconButton,
   Typography,
+  Button,
 } from "@mui/material";
 import React from "react";
-import classes from "./CartItem.module.css";
 
 const CartItem = (props) => {
   const price = `PHP ${props.price}`;
 
   return (
-    <li className={classes["cart-item"]}>
-      <div>
-        <h2>{props.name}</h2>
-        <div className={classes.summary}>
-          <span className={classes.price}>{price}</span>
-          <span className={classes.amount}>x {props.amount}</span>
-        </div>
-      </div>
-      <div className={classes.actions}>
-        <button onClick={props.onRemove}>−</button>
-        <button onClick={props.onAdd}>+</button>
-      </div>
-    </li>
+    <Card sx={{ display: "flex" }}>
+      <CardMedia
+        component="img"
+        sx={{ height: 140 }}
+        image={props.image}
+        alt={props.name}
+      />
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <CardContent sx={{ flex: "1 0 auto" }}>
+          <Typography component="div" variant="h5">
+            {props.name}
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            color="text.secondary"
+            component="div"
+          >
+            {price}
+          </Typography>
+        </CardContent>
+        <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
+          <Button onClick={props.onRemove}>−</Button>
+          <Typography>{props.amount}</Typography>
+          <Button onClick={props.onAdd}>+</Button>
+        </Box>
+      </Box>
+    </Card>
   );
 };
 
