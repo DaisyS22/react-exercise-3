@@ -1,47 +1,45 @@
+import React, { useContext } from "react";
+import ItemForm from "./ItemForm";
+import CartContext from "../../store/cart-context";
+
 import {
-  Box,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
-  InputLabel,
   Typography,
-  Input,
-  Button,
-  Grid,
 } from "@mui/material";
 
 const ItemsList = (props) => {
+  const cartCtx = useContext(CartContext);
+
+  const addToCartHandler = (amount) => {
+    cartCtx.addItem({
+      id: props.id,
+      name: props.name,
+      price: props.price,
+      image: props.image,
+      amount: amount,
+    });
+  };
+
   return (
     <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          sx={{
-            // 16:9
-            pt: "56.25%",
-          }}
-          title="image"
-          src={props.image}
-          alt="image"
-        />
-
         <CardContent>
+          <CardMedia
+            component="img"
+            height="140"
+            image={props.image}
+            alt={props.name}
+          >
+            {/* <img src={props.image} /> */}
+          </CardMedia>
           <Typography variant="h6">{props.name}</Typography>
           <Typography>PHP {props.price}</Typography>
         </CardContent>
       </CardActionArea>
-      <Box component="form">
-        <InputLabel>amount</InputLabel>
-        <Input id="amount" min={0} max={5} step={1} defaultValue={0} />
-        <br />
-        <Button variant="contained" size="small" sx={{ margin: "10px" }}>
-          +
-        </Button>
-        <Button variant="contained" size="small" color="error">
-          -
-        </Button>
-      </Box>
+      <ItemForm onAddToCart={addToCartHandler}></ItemForm>
     </Card>
   );
 };

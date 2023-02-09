@@ -1,5 +1,4 @@
-import { Card, CardContent, Container, Grid, Stack } from "@mui/material";
-import { Box } from "@mui/system";
+import { Container, Stack } from "@mui/material";
 import React from "react";
 import ItemsList from "./ItemsList";
 
@@ -7,25 +6,25 @@ export const DUMMY_ITEMS = [
   {
     id: 1,
     image: "../../assets/shirt.png",
-    name: "Tshirt",
+    name: "Tshirts",
     price: 199,
   },
   {
     id: 2,
-    image: "../../assets/jeans.png",
-    name: "Shirt",
+    image: "../../assets/shorts.png",
+    name: "Shorts",
     price: 299,
   },
   {
     id: 3,
-    image: "../../assets/jeans.png",
-    name: "Jeans",
+    image: "../../assets/shoes.png",
+    name: "Shoes",
     price: 399,
   },
   {
     id: 4,
-    image: "../../assets/shirt.png",
-    name: "Shoes",
+    image: "../../assets/watch.png",
+    name: "Watch",
     price: 299,
   },
 ];
@@ -34,6 +33,7 @@ const AvailableItems = () => {
   const itemList = DUMMY_ITEMS.map((item) => (
     <ItemsList
       key={item.id}
+      id={item.id}
       image={item.image}
       name={item.name}
       price={item.price}
