@@ -15,7 +15,7 @@ const CartItem = (props) => {
     <Card sx={{ display: "flex" }}>
       <CardMedia
         component="img"
-        sx={{ height: 140 }}
+        sx={{ maxWidth: 200, height: "auto" }}
         image={props.image}
         alt={props.name}
       />

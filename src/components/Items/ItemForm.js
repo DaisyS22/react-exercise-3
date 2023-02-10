@@ -1,10 +1,14 @@
-import { React, useRef } from "react";
-import { Button } from "@mui/material";
+import { React, useContext, useRef } from "react";
+import { Button, Typography } from "@mui/material";
 import InputField from "../UI/InputField";
 import { Stack } from "@mui/system";
+import CartContext from "../../store/cart-context";
 
 const ItemForm = (props) => {
   const amountInputRef = useRef();
+
+  // const cartCtx = useContext(CartContext);
+  // const numberOfItems = cartCtx.items;
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -30,6 +34,7 @@ const ItemForm = (props) => {
             defaultValue: "1",
           }}
         />
+
         <br />
         <Stack spacing={2} direction="row">
           <Button type="submit">add</Button>
