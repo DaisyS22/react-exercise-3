@@ -12,7 +12,13 @@ const CartItem = (props) => {
   const price = `PHP ${props.price}`;
 
   return (
-    <Card sx={{ display: "flex", justifyContent: "space-evenly" }}>
+    <Card
+      sx={{
+        display: "flex",
+        justifyContent: "space-evenly",
+        marginTop: "25px",
+      }}
+    >
       <CardMedia
         component="img"
         sx={{ maxWidth: 200 }}

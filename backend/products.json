@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "id": "e1",
+      "title": "T shirt large size Men",
+      "price": "2023-02-22",
+      "image": "https://png.pngtree.com/png-vector/20191017/ourmid/pngtree-bmx-t-shirt-design-png-image_1809920.jpg",
+      "description": "This tshirt is for men"
+    }
+  ]
+}

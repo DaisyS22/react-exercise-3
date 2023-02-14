@@ -11,20 +11,23 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
-const ProductItem = (props) => {
-  const cartCtx = useContext(CartContext);
+const ProductItem = ({ product }) => {
+  // const cartCtx = useContext(CartContext);
 
-  const addToCartHandler = (amount) => {
-    cartCtx.addItem({
-      id: props.id,
-      name: props.name,
-      price: props.price,
-      image: props.image,
-      amount: amount,
-    });
-  };
-
+  // const addToCartHandler = (amount) => {
+  //   cartCtx.addItem({
+  //     id: props.id,
+  //     name: props.name,
+  //     price: props.price,
+  //     image: props.image,
+  //     amount: amount,
+  //   });
+  // };
+  function startDeleteHandler() {
+    // ...
+  }
   const onIncreaseItem = () => {};
   const onDecreaseItem = () => {};
 
@@ -39,13 +42,16 @@ const ProductItem = (props) => {
           <CardMedia
             component="img"
             height="140"
-            image={props.image}
-            alt={props.name}
-          >
-            {/* <img src={props.image} /> */}
-          </CardMedia>
-          <Typography variant="h6">{props.name}</Typography>
-          <Typography>PHP {props.price}</Typography>
+            image={product.image}
+            alt={product.title}
+          ></CardMedia>
+          <Typography variant="h6">{product.title}</Typography>
+          <Typography variant="h6">PHP {product.price}</Typography>
+          <Typography>{product.description}</Typography>
+          <menu>
+            <a href="edit">Edit</a>
+            <button onClick={startDeleteHandler}>Delete</button>
+          </menu>
         </CardContent>
       </CardActionArea>
 
@@ -57,7 +63,7 @@ const ProductItem = (props) => {
         +
       </Button> */}
 
-      <ProductItemForm onAddToCart={addToCartHandler}></ProductItemForm>
+      {/* <ProductItemForm onAddToCart={addToCartHandler}></ProductItemForm> */}
     </Card>
   );
 };

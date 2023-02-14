@@ -11,7 +11,7 @@ import {
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useContext } from "react";
 import CartContext from "../../store/cart-context";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = (props) => {
   const cartCtx = useContext(CartContext);
@@ -27,45 +27,48 @@ const Header = (props) => {
             TaraGmeet
           </Typography>
 
-          <List sx={{ display: "flex", justifyItems: "center" }}>
+          <List sx={{ display: "flex" }}>
             <ListItem>
-              <Link
-                to="/product/new"
+              <NavLink
+                to="/"
                 style={{
                   textDecoration: "none",
                   color: "#fff",
                 }}
               >
                 Home
-              </Link>
+              </NavLink>
             </ListItem>
             <ListItem>
-              <Link
-                to="/product/new"
+              <NavLink
+                to="/products/new"
                 style={{
                   textDecoration: "none",
                   color: "#fff",
                 }}
               >
                 Add Product
-              </Link>
+              </NavLink>
             </ListItem>
             <ListItem>
-              <Link
-                to="/product/new"
+              <NavLink
+                to="/products/:productId/edit"
                 style={{
                   textDecoration: "none",
                   color: "#fff",
                 }}
               >
                 Edit Product
-              </Link>
+              </NavLink>
             </ListItem>
           </List>
 
           <Badge badgeContent={numberOfCartItems} color="error">
             <Link to="/cart-items">
-              <ShoppingCartOutlinedIcon onClick={props.onShowCart}>
+              <ShoppingCartOutlinedIcon
+                onClick={props.onShowCart}
+                sx={{ color: "white" }}
+              >
                 Cart
               </ShoppingCartOutlinedIcon>
             </Link>
