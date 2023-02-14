@@ -2,23 +2,19 @@ import Cart from "./components/Cart/Cart";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/pages/RootLayout";
 import Products from "./components/Products/Products";
-import NewProduct from "./components/NewProduct/ProductForm";
+import NewProduct from "./components/pages/NewProduct";
+import HomePage from "./components/pages/HomePage";
+import EditProduct from "./components/pages/EditProduct";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-
     children: [
-      {
-        path: "/",
-        element: <Products />,
-      },
-      {
-        path: "/cart-items",
-        element: <Cart />,
-      },
-      { path: "/add-product", element: <NewProduct /> },
+      { index: true, element: <HomePage /> },
+      { path: "cart-items", element: <Cart /> },
+      { path: "products/new", element: <NewProduct /> },
+      { path: "products/:eventId/edit", element: <EditProduct /> },
     ],
   },
 ]);

@@ -1,5 +1,13 @@
 import React from "react";
-import { Typography, AppBar, Toolbar, Badge, Button } from "@mui/material";
+import {
+  Typography,
+  AppBar,
+  Toolbar,
+  Badge,
+  Button,
+  ListItem,
+  List,
+} from "@mui/material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useContext } from "react";
 import CartContext from "../../store/cart-context";
@@ -19,7 +27,41 @@ const Header = (props) => {
             TaraGmeet
           </Typography>
 
-          <Link to="/add-product">Add Product</Link>
+          <List sx={{ display: "flex", justifyItems: "center" }}>
+            <ListItem>
+              <Link
+                to="/product/new"
+                style={{
+                  textDecoration: "none",
+                  color: "#fff",
+                }}
+              >
+                Home
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                to="/product/new"
+                style={{
+                  textDecoration: "none",
+                  color: "#fff",
+                }}
+              >
+                Add Product
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                to="/product/new"
+                style={{
+                  textDecoration: "none",
+                  color: "#fff",
+                }}
+              >
+                Edit Product
+              </Link>
+            </ListItem>
+          </List>
 
           <Badge badgeContent={numberOfCartItems} color="error">
             <Link to="/cart-items">
