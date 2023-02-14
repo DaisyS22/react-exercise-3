@@ -1,10 +1,9 @@
-import { React, useContext, useRef } from "react";
-import { Button, Typography } from "@mui/material";
-import InputField from "../UI/InputField";
+import { React, useRef } from "react";
+import { Button } from "@mui/material";
+import InputField from "../../UI/InputField";
 import { Stack } from "@mui/system";
-import CartContext from "../../store/cart-context";
 
-const ItemForm = (props) => {
+const ProductItemForm = (props) => {
   const amountInputRef = useRef();
 
   // const cartCtx = useContext(CartContext);
@@ -37,11 +36,13 @@ const ItemForm = (props) => {
 
         <br />
         <Stack spacing={2} direction="row">
-          <Button type="submit">add</Button>
+          <Button type="submit" fullWidth>
+            ADD TO CART
+          </Button>
         </Stack>
       </form>
     </>
   );
 };
 
-export default ItemForm;
+export default ProductItemForm;

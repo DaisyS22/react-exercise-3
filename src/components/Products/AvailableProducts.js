@@ -1,6 +1,6 @@
 import { Container, Stack } from "@mui/material";
-import React from "react";
-import ItemsList from "./ItemsList";
+import React, { useState } from "react";
+import ProductItem from "./ProductItem/ProductItem";
 
 export const DUMMY_ITEMS = [
   {
@@ -29,9 +29,9 @@ export const DUMMY_ITEMS = [
   },
 ];
 
-const AvailableItems = () => {
+const AvailableProducts = () => {
   const itemList = DUMMY_ITEMS.map((item) => (
-    <ItemsList
+    <ProductItem
       key={item.id}
       id={item.id}
       image={item.image}
@@ -40,13 +40,23 @@ const AvailableItems = () => {
     />
   ));
 
+  // const [items, setItems] = useState(DUMMY_ITEMS);
+  // const addItemHandler = (item) => {
+  //   setItems((prevItems) => {
+  //     return [item, ...prevItems];
+  //   });
+  //   console.log(item);
+  // };
+
   return (
     <Container sx={{ py: 8 }} maxWidth="md">
+      {/* <NewItem onAddItem={addItemHandler}>{items.item}</NewItem> */}
       <Stack
         direction="row"
         justifyContent="center"
         alignItems="center"
         spacing={2}
+        sx={{ m: 5 }}
       >
         {itemList}
       </Stack>
@@ -54,4 +64,4 @@ const AvailableItems = () => {
   );
 };
 
-export default AvailableItems;
+export default AvailableProducts;

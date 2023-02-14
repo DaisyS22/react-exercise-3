@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
-import ItemForm from "./ItemForm";
-import CartContext from "../../store/cart-context";
+import ProductItemForm from "./ProductItemForm";
+import CartContext from "../../../store/cart-context";
 
 import {
+  Button,
+  Box,
   Card,
   CardActionArea,
   CardContent,
@@ -10,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 
-const ItemsList = (props) => {
+const ProductItem = (props) => {
   const cartCtx = useContext(CartContext);
 
   const addToCartHandler = (amount) => {
@@ -23,8 +25,15 @@ const ItemsList = (props) => {
     });
   };
 
+  const onIncreaseItem = () => {};
+  const onDecreaseItem = () => {};
+
   return (
-    <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+    <Card
+      sx={{
+        height: "100%",
+      }}
+    >
       <CardActionArea>
         <CardContent>
           <CardMedia
@@ -39,9 +48,18 @@ const ItemsList = (props) => {
           <Typography>PHP {props.price}</Typography>
         </CardContent>
       </CardActionArea>
-      <ItemForm onAddToCart={addToCartHandler}></ItemForm>
+
+      {/* <Button onClick={onDecreaseItem} sx={{ width: "50%" }}>
+        -
+      </Button>
+      {props.amount}
+      <Button onClick={onIncreaseItem} sx={{ width: "50%" }}>
+        +
+      </Button> */}
+
+      <ProductItemForm onAddToCart={addToCartHandler}></ProductItemForm>
     </Card>
   );
 };
 
-export default ItemsList;
+export default ProductItem;
