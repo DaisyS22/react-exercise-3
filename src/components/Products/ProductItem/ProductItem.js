@@ -49,7 +49,7 @@ const ProductItem = ({ product }) => {
           <Typography variant="h6">PHP {product.price}</Typography>
           <Typography>{product.description}</Typography>
           <menu>
-            <a href="edit">Edit</a>
+            <Link to="edit">Edit</Link>
             <button onClick={startDeleteHandler}>Delete</button>
           </menu>
         </CardContent>
