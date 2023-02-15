@@ -98,7 +98,7 @@ const ProductForm = ({ method, product }) => {
                     required
                     defaultValue={product ? product.image : ""}
                     InputProps={{
-                      startAdornment: <ImageIcon fontsize="large"></ImageIcon>,
+                      startAdornment: <ImageIcon></ImageIcon>,
                     }}
                     fullWidth
                   />
