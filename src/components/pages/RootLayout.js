@@ -8,11 +8,11 @@ const RootLayout = () => {
   // const navigation = useNavigation();
 
   return (
-    <CartProvider>
+    <>
       <Header />
       {/* {navigation.state === "loading" && <Typography>Loading ...</Typography>} */}
       <Outlet />
-    </CartProvider>
+    </>
   );
 };
 

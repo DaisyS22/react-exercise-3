@@ -30,7 +30,7 @@ const Header = (props) => {
           <List sx={{ display: "flex" }}>
             <ListItem>
               <NavLink
-                to="/"
+                to=""
                 style={{
                   textDecoration: "none",
                   color: "#fff",
@@ -41,24 +41,13 @@ const Header = (props) => {
             </ListItem>
             <ListItem>
               <NavLink
-                to="/products/new"
+                to="new"
                 style={{
                   textDecoration: "none",
                   color: "#fff",
                 }}
               >
                 Add Product
-              </NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink
-                to="/products/:productId/edit"
-                style={{
-                  textDecoration: "none",
-                  color: "#fff",
-                }}
-              >
-                Edit Product
               </NavLink>
             </ListItem>
           </List>

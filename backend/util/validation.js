@@ -2,15 +2,14 @@ function isValidText(value) {
   return value && value.trim().length > 0;
 }
 
-function isValidDate(value) {
-  const date = new Date(value);
-  return value && date !== 'Invalid Date';
+function isValidPrice(value) {
+  return value && value !== 0;
 }
 
 function isValidImageUrl(value) {
-  return value && value.startsWith('http');
+  return value && value.startsWith("http");
 }
 
 exports.isValidText = isValidText;
-exports.isValidDate = isValidDate;
+exports.isValidPrice = isValidPrice;
 exports.isValidImageUrl = isValidImageUrl;

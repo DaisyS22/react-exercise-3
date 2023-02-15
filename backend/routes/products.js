@@ -3,7 +3,7 @@ const express = require("express");
 const { getAll, get, add, replace, remove } = require("../data/product");
 const {
   isValidText,
-  isValidprice,
+  isValidPrice,
   isValidImageUrl,
 } = require("../util/validation");
 
@@ -32,16 +32,16 @@ router.post("/", async (req, res, next) => {
 
   let errors = {};
 
-  if (!isValidText(data.title)) {
-    errors.title = "Invalid title.";
-  }
-
-  if (!isValidprice(data.price)) {
-    errors.price = "Invalid price.";
+  if (!isValidText(data.name)) {
+    errors.name = "Invalid name.";
   }
 
   if (!isValidText(data.description)) {
     errors.description = "Invalid description.";
+  }
+
+  if (!isValidPrice(data.price)) {
+    errors.price = "Invalid price.";
   }
 
   if (!isValidImageUrl(data.image)) {
@@ -57,7 +57,9 @@ router.post("/", async (req, res, next) => {
 
   try {
     await add(data);
+    // setTimeout(() => {
     res.status(201).json({ message: "product saved.", product: data });
+    // }, 1500);
   } catch (error) {
     next(error);
   }
@@ -68,8 +70,8 @@ router.patch("/:id", async (req, res, next) => {
 
   let errors = {};
 
-  if (!isValidText(data.title)) {
-    errors.title = "Invalid title.";
+  if (!isValidText(data.name)) {
+    errors.name = "Invalid name.";
   }
 
   if (!isValidText(data.description)) {

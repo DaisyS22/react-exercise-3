@@ -1,6 +1,14 @@
-import { Container, Stack } from "@mui/material";
+import {
+  Card,
+  Container,
+  List,
+  ListItem,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ProductItemForm from "./ProductItem/ProductItemForm";
 import classes from "./ProductList.module.css";
 
 // export const DUMMY_ITEMS = [
@@ -61,19 +69,29 @@ const ProductList = ({ products }) => {
       >
         {itemList}
       </Stack> */}
-      <ul className={classes.list}>
-        {products.map((product) => (
-          <li key={product.id} className={classes.item}>
-            <Link to={product.id}>
-              <img src={product.image} alt={product.title} />
-              <div className={classes.content}>
-                <h2>{product.title}</h2>
-                <h1>{product.description}</h1>
-              </div>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Card>
+        <List>
+          {products.map((product) => (
+            <ListItem key={product.id} className={classes.item}>
+              <Link to={product.id}>
+                <img src={product.image} alt={product.name} />
+                <li className={classes.content}>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {product.name}
+                  </Typography>
+                  <Typography variant="h6" color="text.secondary">
+                    {product.price}
+                  </Typography>
+                  <Typography>{product.description}</Typography>
+                  {/* <ProductItemForm
+                  onAddToCart={addToCartHandler}
+                ></ProductItemForm> */}
+                </li>
+              </Link>
+            </ListItem>
+          ))}
+        </List>
+      </Card>
     </Container>
   );
 };

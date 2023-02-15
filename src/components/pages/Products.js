@@ -6,10 +6,11 @@ import ProductList from "../Products/ProductList";
 const Products = () => {
   const data = useLoaderData();
 
-  if (data.isError) {
-    return <Typography>{data.message}</Typography>;
-  }
   const products = data.products;
+
+  // if (data.isError) {
+  //   return <Typography>{data.message}</Typography>;
+  // }
 
   return (
     <>

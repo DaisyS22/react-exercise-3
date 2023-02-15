@@ -1,11 +1,32 @@
 {
   "products": [
     {
-      "id": "e1",
-      "title": "T shirt large size Men",
-      "price": "450",
-      "image": "https://png.pngtree.com/png-vector/20191017/ourmid/pngtree-bmx-t-shirt-design-png-image_1809920.jpg",
-      "description": "This tshirt is for men"
+      "name": "Tshirt for Men",
+      "image": "https://i.imgur.com/wcaVm5o.png",
+      "price": "500",
+      "description": "This is a sample description for the tshirt product. Available in all sizes SMALL, MEDIUM, LARGE",
+      "id": "d2d71647-d244-4548-bfd2-5f5fb6d8cf0f"
+    },
+    {
+      "name": "Sneakers",
+      "image": "https://i.imgur.com/xKDW4CU.png",
+      "price": "150",
+      "description": "This is a sample description for the shoes product. Available in all sizes SMALL, MEDIUM, LARGE",
+      "id": "2e52ecc3-088d-4d7b-917b-b17fbc23940d"
+    },
+    {
+      "name": "Shorts S MD L",
+      "image": "https://i.imgur.com/JtTKlQG.png",
+      "price": "500",
+      "description": "This is a sample description for the tshirt product. Available in all sizes SMALL, MEDIUM, LARGE",
+      "id": "14b2e772-c993-4bf5-8694-79a86cdf3d8b"
+    },
+    {
+      "name": "Watch",
+      "image": "https://i.imgur.com/MXvwnez.png",
+      "price": "150",
+      "description": "This is a sample description for the tshirt product. Available in all sizes SMALL, MEDIUM, LARGE",
+      "id": "0b746612-dee9-4758-ac44-04c32821715b"
     }
   ]
 }
