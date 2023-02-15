@@ -8,9 +8,9 @@ import {
   InputAdornment,
   TextField,
 } from "@mui/material";
+import ImageIcon from "@mui/icons-material/Image";
 import React from "react";
 import { Form, useNavigate, useNavigation } from "react-router-dom";
-import classes from "./ProductForm.module.css";
 
 const ProductForm = ({ method, product }) => {
   const navigate = useNavigate();
@@ -97,6 +97,9 @@ const ProductForm = ({ method, product }) => {
                     name="image"
                     required
                     defaultValue={product ? product.image : ""}
+                    InputProps={{
+                      startAdornment: <ImageIcon fontsize="large"></ImageIcon>,
+                    }}
                     fullWidth
                   />
                 </Grid>

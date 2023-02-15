@@ -17,6 +17,7 @@ import { Link, useSubmit } from "react-router-dom";
 
 const ProductItem = ({ product }) => {
   const submit = useSubmit();
+
   // const cartCtx = useContext(CartContext);
 
   // const addToCartHandler = (amount) => {
@@ -73,12 +74,15 @@ const ProductItem = ({ product }) => {
     //   <ProductItemForm onAddToCart={addToCartHandler}></ProductItemForm>
     // </Card>
     <Grid container justifyContent="center" paddingTop="50px">
-      <Card sx={{ maxWidth: 600, height: 600 }}>
+      <Card sx={{ maxWidth: 600 }}>
         <CardMedia
-          sx={{ width: 400, height: 400, margin: "auto" }}
+          component="img"
+          // height="400"
+          sx={{ width: 400, margin: "auto" }}
           image={product.image}
           title={product.name}
         />
+
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {product.name}

@@ -24,7 +24,9 @@ const Header = (props) => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            TaraGmeet
+            <Link to="" style={{ textDecoration: "none", color: "#fff" }}>
+              TaraGmeet
+            </Link>
           </Typography>
 
           <List sx={{ display: "flex" }}>

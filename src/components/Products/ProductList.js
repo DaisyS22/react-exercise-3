@@ -58,7 +58,7 @@ const ProductList = ({ products }) => {
   // };
 
   return (
-    <Container sx={{ py: 8 }} maxWidth="md">
+    <Container sx={{ py: 5 }} maxWidth="md">
       {/* <NewItem onAddItem={addItemHandler}>{items.item}</NewItem> */}
       {/* <Stack
         direction="row"
@@ -69,6 +69,7 @@ const ProductList = ({ products }) => {
       >
         {itemList}
       </Stack> */}
+
       <Card>
         <List>
           {products.map((product) => (
@@ -80,7 +81,7 @@ const ProductList = ({ products }) => {
                     {product.name}
                   </Typography>
                   <Typography variant="h6" color="text.secondary">
-                    {product.price}
+                    PHP {product.price}
                   </Typography>
                   <Typography>{product.description}</Typography>
                   {/* <ProductItemForm
